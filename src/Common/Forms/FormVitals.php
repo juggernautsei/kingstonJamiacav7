@@ -332,6 +332,16 @@ class FormVitals extends ORDataObject
     {
         $this->BMI_status = $status;
     }
+    public function set_BSA($bsa)
+    {
+        if (is_numeric($bsa)) {
+            $this->BSA = $bsa;
+        }
+    }
+    public function get_BSA()
+    {
+        return $this->BSA;
+    }
     public function get_waist_circ()
     {
         return $this->waist_circ;

@@ -107,6 +107,7 @@ class VitalsService extends BaseService
                     ,vitals.respiration
                     ,vitals.BMI
                     ,vitals.BMI_status
+                    ,vitals.BSA
                     ,vitals.waist_circ
                     ,vitals.head_circ
                     ,vitals.oxygen_saturation
@@ -129,7 +130,7 @@ class VitalsService extends BaseService
                     SELECT
                         id,uuid,`user`,groupname,authorized,activity,external_id
                          ,`date`,note
-                        ,bpd,bps,weight,height,temperature,temp_method,pulse,respiration,BMI,BMI_status,waist_circ
+                        ,bpd,bps,weight,height,temperature,temp_method,pulse,respiration,BMI,BMI_status,BSA,waist_circ
                          ,head_circ,oxygen_saturation,oxygen_flow_rate,inhaled_oxygen_concentration
                          , ped_weight_height,ped_bmi,ped_head_circ
                     FROM

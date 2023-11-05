@@ -5189,6 +5189,33 @@ RestConfig::$ROUTE_MAP = array(
         RestConfig::apiLog($return);
         return $return;
     },
+    /**
+     * @OA\Get(
+     *     path="/api/appointment/status",
+     *     description="Retrieves all appointment statuses",
+     *     tags={"standard"},
+     *     @OA\Response(
+     *     response="200",
+     *     ref="#/components/responses/standard"
+     *    ),
+     *     @OA\Response(
+     *     response="400",
+     *     ref="#/components/responses/badrequest"
+     *    ),
+     *     @OA\Response(
+     *     response="401",
+     *     ref="#/components/responses/unauthorized"
+     *    ),
+     *     security={{"openemr_auth":{}}}
+     *     )
+     */
+    "GET /api/appointment/status" => function(){
+        RestConfig::scope_check("user", "appointment", "read");
+        RestConfig::authorization_check("patients", "appt");
+        $result = (new AppointmentRestController())->getAppointmentStatus();
+        RestConfig::apiLog($result);
+        return $return;
+    },
 
     /**
      *  @OA\Get(

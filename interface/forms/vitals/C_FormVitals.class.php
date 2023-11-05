@@ -277,6 +277,10 @@ class C_FormVitals
                 ,'templateName' => 'vitals_bmi_status.html.twig'
             ]
             ,[
+                'type' => 'template'
+                ,'templateName' => 'vitals_bsa.html.twig'
+            ]
+            ,[
                 'type' => 'textbox'
                 ,'title' => xl('Pediatric Weight Height Percentile')
                 // eventually we could just grab the raw values...

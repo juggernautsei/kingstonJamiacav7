@@ -86,6 +86,7 @@
 
         if (targetSaveUnit == "weight_input" || targetSaveUnit == "height_input") {
             calculateBMI();
+            calculateBSA();
         }
     }
 
@@ -299,4 +300,16 @@ function calculateBMI() {
     else {
         bmiNode.value = "";
     }
+}
+
+function calculateBSA() {
+    let height=$("#height_input").val();
+    let weight=$("#weight_input").val();
+    let bsa=0;
+    if((height!="") && (weight!=""))
+    {
+        bsa=Math.sqrt((height*weight)/3600);
+        bsa=bsa.toFixed(2);
+    }
+    $("#BSA_input").val(bsa);
 }
